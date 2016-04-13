@@ -1,0 +1,42 @@
+{{extend 'layout.html'}}
+<style>
+ul{
+    list-style-type: square;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+    
+#nav{
+    margin-top:40px;
+    font-size:large;
+}    
+#nav a:hover{
+	background:#7AA9BA;
+}
+   
+a.menu_links { cursor: pointer; }
+</style>
+<h1>
+<ul id="nav">
+			<li><a href="show_activebids">Apply For a Bid</a></li>
+			<li><a href="usershow_mybids">Show my Activities</a></li>
+            <li><a href="usershow_myitems">Show my Items</a></li>
+            <li><a href="search_itembyid">Search By ItemID</a></li>
+			<li><a href="sell_an_item">Sell an Item</a></li>
+            <!--<li><a href="show_progresssites">Show Current Biddings</a></li>-->
+            
+</ul>
+ </h1>

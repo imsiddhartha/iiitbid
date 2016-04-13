@@ -1,0 +1,40 @@
+{{extend 'layout.html'}}
+<style>
+ul{
+    list-style-type: square;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+    
+#nav{
+    margin-top:40px;
+    font-size:large;
+}    
+#nav a:hover{
+	background:#7AA9BA;
+}
+   
+a.menu_links { cursor: pointer; }
+</style>
+<h1>
+<ul id="nav">
+			<li><a href="show_comp">View all the grievances</a></li>
+			<li><a href="search_comp">View grievance By ID</a></li>
+			<li><a href="sitewise_comp">View grievance by Topic</a></li>
+			<li><a href="search_solvcomp">View solved grievances</a></li>
+            <li><a href="search_inpcomp">View in process grievances</a></li>
+</ul>
+ </h1>

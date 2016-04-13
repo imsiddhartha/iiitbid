@@ -1,0 +1,42 @@
+{{extend 'layout.html'}}
+<style>
+ul{
+    list-style-type: square;
+
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+#nav{
+    margin-top:40px;
+    font-size:large;
+}
+
+#nav a:hover{
+	background:#7AA9BA;
+}
+
+
+a.menu_links { cursor: pointer; }
+</style>
+
+<h1>View Topicwise Complains</h1>
+<h2>
+{{for x in ele_list:}}
+{{=LI(A(x.Topic, _href=URL("sitewise_compd", args=x.SiteID)))}}
+{{pass}}
+</h2>

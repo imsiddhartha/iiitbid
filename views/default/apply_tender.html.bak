@@ -1,0 +1,4 @@
+{{extend 'layout.html'}}
+<h1>Bid For Item</h1>
+<img src="{{=URL('default', 'download', args=ele_list)}}" height="250" width="250" alt="ImageToShow" />
+{{=form}}

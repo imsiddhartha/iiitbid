@@ -1,0 +1,44 @@
+{{extend 'layout.html'}}
+<style>
+ul{
+    list-style-type: square;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+    
+#nav{
+    margin-top:40px;
+    font-size:large;
+}    
+#nav a:hover{
+	background:#7AA9BA;
+}
+   
+a.menu_links { cursor: pointer; }
+</style>
+<h1>
+<ul id="nav">
+			<!--<li><a href="create_site">Create Site</a></li>-->
+			<li><a href="adminshow_activebids">Show Ongoing Bidding</a></li>
+			<li><a href="adminshow_closedbids">Show closed Bids</a></li>
+			<!--<li><a href="show_progresssites">Show in progress sites</a></li>-->
+            <li><a href="show_pendingbids">Show Pending for Approval</a></li>
+            <li><a href="adminshow_userdet">Show all users</a></li>
+            <li><a href="adminsearch_userbyid">Search User by ID</a></li>
+            <li><a href="adminsearch_userbyname">Search User by Name</a></li>
+            <li><a href="admin_complaints">Show Grievances</a></li>
+</ul>
+ </h1>

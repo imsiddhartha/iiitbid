@@ -1,0 +1,3 @@
+{{extend 'layout.html'}}
+<h1>Lodge Grievances</h1>
+{{=form}}

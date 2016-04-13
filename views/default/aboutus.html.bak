@@ -1,0 +1,16 @@
+{{extend 'layout.html'}}
+<h1>About Us</h1>
+<h3>
+    Ankur Shrivastava
+     <br>   
+201405551<br>
+    <a href="https://www.facebook.com/ankur263">View Profile</a>
+</h3>
+
+<h3>
+    Ruchir Sharma<br>
+    201405558<br>
+    <a href="https://www.facebook.com/ruchir.sharma1">View Profile</a>
+</h3>
+
+{{=BEAUTIFY(response._vars)}}

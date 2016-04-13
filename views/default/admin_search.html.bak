@@ -1,0 +1,38 @@
+{{extend 'layout.html'}}
+<style>
+ul{
+    list-style-type: square;
+}
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    text-decoration: underline;
+}
+    
+#nav{
+    margin-top:40px;
+    font-size:large;
+}    
+#nav a:hover{
+	background:#7AA9BA;
+}
+   
+a.menu_links { cursor: pointer; }
+</style>
+<h1>ADMIN:Search></h1>
+<h1>
+<ul id="nav">
+			<li><a href="adminsearch_userbyid">Search user by ID</a></li>
+			<li><a href="adminsearch_userbyname">Search user by name</a></li>
+</ul>
+ </h1>

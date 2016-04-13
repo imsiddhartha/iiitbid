@@ -1,0 +1,93 @@
+{{extend 'layout.html'}}
+<h1>ADMIN PANEL: Show Tenders</h1>
+<style>
+  #table_wrapper{border:1px solid olive;float:left;height:350px; margin-left: -100px;}
+  #tbody{height:350px;overflow-y:auto;width:690px;}
+  table{border-collapse:collapse; width:99%;}
+  td{padding:1px 5px; /* pixels */
+      border-right:1px solid red; /* to avoid the hacks for the padding */
+      border-bottom:1px solid red;}
+  .td1{width:10px;}
+  .td2{width:100px;}
+  .td3{width:170px;}
+   .td4{width:70px;}
+     .td5{width:80px;}
+    .td6{width:90px;}
+    .td7{width:60px;}
+    .td8{width:90px;}
+   .td9{border-right-width:0;align:center;} /* optional */
+  #headers{width:685px;background:DodgerBlue;border-bottom:1px solid red;height:40px;}
+  #headers div{padding:1px 5px;float:left;border-right:0px solid orange;}
+  #headers #head1{width:10x;} /* the same as td1 */
+  #headers #head2{width:50px;} /* the same as td2 */
+  #headers #head3{width:70px;} 
+  #headers #head4{width:55px;} 
+    #headers #head5{width:57px;}
+     #headers #head6{width:60px;}
+     #headers #head7{width:70px;}
+     #headers #head8{width:100px;} 
+  #headers #head9{float:none;border-right-width:0}
+  td{
+      height:20px;
+  }
+  #click{
+      height:25px;width:80px;
+      
+  } 
+    h1{
+        margin-left: -100px;
+    }
+</style>
+<div id="table_wrapper" style="width:120%" >
+ <div id="headers">
+            <div id="head1">User Name</div>
+            <div id="head2">Site Name</div>
+            <div id="head3">Description</div>
+            <div id="head4">Estimated Cost</div>
+            <div id="head5">Estimated Duration</div>
+            <div id="head6">Time of launch</div>
+              <div id="head7">Status</div>
+             <div id="head8">View User Activity</div>
+            <div id="head9">Approve tender</div>
+    </div>
+     <div id="tbody">
+    <table >
+        {{for ed in tend_list:}}
+        <tr>
+     <td class="td1">
+          {{=ed.UName}}
+      </td>
+
+
+            <td class="td2">
+         {{=ed.Description}}
+        </td>
+
+            <td class="td3">
+         {{=ed.UserID}}
+        </td>
+             <td class="td4">
+         {{=ed.bid_amt}}
+        </td>
+           
+            <td class="td6">
+                {{=ed.CurrentTime}}
+            </td>
+             <td class="td7">
+                {{=ed.Status}}
+            </td>
+            <td class="td8">
+                <input type="submit" id="click" name ="Close" value="View"
+                    onclick = 'window.location="{{=URL('default', 'adminshow_activity', args=[ed.UserID])}}";'>
+
+                </td>
+                <td class="td9">
+                    <input type="submit" id="click" name ="Close" value="Approve"
+    onclick = 'window.location="{{=URL('default', 'approve_tender', args=[ed.id,ed.SiteID])}}";'>
+
+                </td>
+    </tr>
+    {{pass}}
+    </table>
+         </div>
+    </div>

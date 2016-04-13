@@ -1,0 +1,65 @@
+{{extend 'layout.html'}}
+<h1>Solved Grievances</h1>
+<style>
+  #table_wrapper{border:1px solid olive;float:left;height:300px;}
+  #tbody{height:280px;overflow-y:auto;width:570px;}
+  table{border-collapse:collapse; width:100%;}
+  td{padding:1px 5px; /* pixels */
+      border-right:1px solid red; /* to avoid the hacks for the padding */
+      border-bottom:1px solid red;}
+  .td1{width:10px;}
+  .td2{width:140px;}
+  .td3{width:140px;}
+    .td4{width:70px;}
+    .td5{border-right-width:0;} /* optional */
+  #headers{width:570px;background:DodgerBlue;border-bottom:1px solid red;}
+  #headers div{padding:1px 5px;float:left;border-right:1px solid orange;}
+  #headers #head1{width:10x;} /* the same as td1 */
+  #headers #head2{width:140px;} /* the same as td2 */
+  #headers #head3{width:140px;} 
+  #headers #head4{width:70px;} 
+  #headers #head5{float:none;border-right-width:0}
+  td{
+      height:20px;
+  }
+</style>
+
+<div id="table_wrapper" style="width:100%" >
+{{if comp_list:}}
+    <div id="headers">
+            <div id="head1">ID</div>
+            <div id="head2">Topic</div>
+            <div id="head3">Description</div>
+            <div id="head4">Status</div>
+            <div id="head5">Time of Grievance</div>
+    </div>
+    <div id="tbody">
+    <table >
+    {{for ed in comp_list:}}
+        <tr>
+      <td class="td1">
+          {{=ed.id}}
+      </td>
+           <td class="td2">
+         {{=ed.Topic}}
+        </td>
+               <td class="td3">
+         {{=ed.Description}}
+        </td>
+            <td class="td4">
+         {{=ed.Status}}
+        </td>
+            <td class="td5">
+                {{=ed.CurrentTime}}
+            </td>
+
+    </tr>
+    {{pass}}
+        </table>
+      </div>      
+{{else:}}
+    <h2>
+        No Records Found
+       </h2>
+{{pass}}    
+ </div>

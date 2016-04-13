@@ -1,0 +1,22 @@
+{{extend 'layout.html'}}
+<h1>Item Details</h1>
+{{if ele_list:}}
+    {{for ed in ele_list:}}
+        <img src="{{=URL('default', 'download', args=ed.picture)}}" height="250" width="250" alt="ImageToShow" />
+        <p>Item Name:{{=ed.Name}}</p>
+        <p>Min bid Price:{{=ed.minbidprice}}</p>
+        <p>Selling Price:{{=ed.sold_amt}}</p>
+      {{pass}}
+{{pass}}
+{{if ele_seller:}}
+    {{for ed in ele_seller:}}
+        <p>Seller Name:{{=ed.first_name}}</p>
+        <p>Seller Email:{{=ed.email}}</p>
+      {{pass}}
+{{pass}}
+{{if ele_buyer:}}
+    {{for ed in ele_buyer:}}
+        <p>Seller Name:{{=ed.first_name}}</p>
+        <p>Seller Email:{{=ed.email}}</p>
+      {{pass}}
+{{pass}}

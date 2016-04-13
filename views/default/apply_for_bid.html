@@ -1,0 +1,8 @@
+{{extend 'layout.html'}}
+<h1>Bid For Item</h1>
+{{if ele_list:}}
+    {{for ed in ele_list:}}
+        <img src="{{=URL('default', 'download', args=ed.picture)}}" height="250" width="250" alt="ImageToShow" />
+      {{pass}}
+{{pass}}
+{{=form}}

@@ -1,0 +1,92 @@
+{{extend 'layout.html'}}
+<h1>ADMIN PANEL: Ongoing Bidding</h1>
+
+
+<style>
+  #table_wrapper{border:1px solid olive;float:left;height:350px; margin-left: -100px;}
+  #tbody{height:350px;overflow-y:auto;width:690px;}
+  table{border-collapse:collapse; width:99%;}
+  td{padding:1px 5px; /* pixels */
+      border-right:1px solid red; /* to avoid the hacks for the padding */
+      border-bottom:1px solid red;}
+  .td1{width:10px;}
+  .td2{width:100px;}
+  .td3{width:150px;}
+   .td4{width:70px;}
+     .td5{width:60px;}
+    .td6{width:90px;}
+   .td7{border-right-width:0;align:center;} /* optional */
+  #headers{width:685px;background:DodgerBlue;border-bottom:1px solid red;height:40px;}
+  #headers div{padding:1px 5px;float:left;border-right:0px solid orange;}
+  #headers #head1{width:10x;} /* the same as td1 */
+  #headers #head2{width:100px;} /* the same as td2 */
+  #headers #head3{width:150px;} 
+  #headers #head4{width:70px;} 
+    #headers #head5{width:57px;}
+     #headers #head6{width:100px;} 
+  #headers #head7{float:none;border-right-width:0}
+  td{
+      height:20px;
+  }
+  #click{
+      height:25px;width:120px;
+      
+  } 
+    h1{
+        margin-left: -100px;
+    }
+</style>
+<div id="table_wrapper" style="width:120%" >
+    {{if ele_list:}}
+ <div id="headers">
+            <div id="head1">ID</div>
+            <div id="head2">Item Name</div>
+            <div id="head3">Description</div>
+            <div id="head4">Minimum BidPrice</div>
+             <div id="head4">Category</div>
+            <div id="head5">Closed Date</div>
+            <div id="head6">Start Date</div>
+            <div id="head7">Close Bid</div>
+    </div>
+     <div id="tbody">
+    <table >
+{{for ed in ele_list:}}
+    <tr>
+ <td class="td1">
+      {{=ed.id}}
+  </td>
+        
+       <td class="td2">
+     {{=ed.Name}}
+    </td>   
+        <td class="td3">
+     {{=ed.Description}}
+    </td>
+       <td class="td4">
+     {{=ed.minbidcost}}
+    </td>
+        <td class="td4">
+     {{=ed.category}}
+    </td>
+      <td class="td5">
+            {{=ed.EstimatedTime}}
+        </td>
+       <td class="td6">
+            {{=ed.CurrentTime}}
+        </td>
+            <td class="td7">
+                <input type="submit" id="click" name ="Close" value="Close"
+onclick = 'window.location="{{=URL('default', 'close_bidding', args=[ed.id])}}";'>
+
+            </td>
+</tr>
+{{pass}}
+</table>
+         </div>
+    {{else:}}
+        <h2>
+            No Records Found
+            </h2>
+    {{pass}}
+    </h2>
+         </div>

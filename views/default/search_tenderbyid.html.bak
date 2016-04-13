@@ -1,0 +1,7 @@
+{{extend 'layout.html'}} 
+<h2>
+    Check Tender Status
+    
+</h2>
+<h4>Enter the details: </h4>
+{{=form}}

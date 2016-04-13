@@ -1,0 +1,80 @@
+{{extend 'layout.html'}}
+<h1>In-Process Grievances</h1>
+<style>
+  #table_wrapper{border:1px solid olive;float:left;height:350px;}
+  #tbody{height:280px;overflow-y:auto;width:600px;}
+  table{border-collapse:collapse; width:100%;}
+  td{padding:1px 5px; /* pixels */
+      border-right:1px solid red; /* to avoid the hacks for the padding */
+      border-bottom:1px solid red;}
+  .td1{width:10px;}
+  .td2{width:100px;}
+  .td3{width:150px;}
+   .td4{width:70px;}
+     .td5{width:120px;}
+   .td6{border-right-width:0;align:center;} /* optional */
+  #headers{width:600px;background:DodgerBlue;border-bottom:1px solid red;}
+  #headers div{padding:1px 5px;float:left;border-right:1px solid orange;}
+  #headers #head1{width:10x;} /* the same as td1 */
+  #headers #head2{width:100px;} /* the same as td2 */
+  #headers #head3{width:150px;} 
+  #headers #head4{width:70px;} 
+    #headers #head5{width:120px;} 
+  #headers #head6{float:none;border-right-width:0}
+  td{
+      height:20px;
+  }
+  #click{
+      height:25px;width:80px;
+      
+  }  
+</style>
+
+<div id="table_wrapper" style="width:105%" >
+{{if comp_list:}}
+
+     <div id="headers">
+            <div id="head1">ID</div>
+            <div id="head2">Topic</div>
+            <div id="head3">Description</div>
+            <div id="head4">Status</div>
+            <div id="head5">Time of Grievance</div>
+            <div id="head6">Click to change status</div>
+    </div>
+    <div id="tbody">
+    <table >
+    {{for ed in comp_list:}}
+        <tr>
+      <td class="td1">
+          {{=ed.id}}
+      </td>
+         <td class="td2">
+         {{=ed.Topic}}
+        </td>
+           <td class="td3">
+         {{=ed.Description}}
+        </td>
+           <td class="td4">
+         {{=ed.Status}}
+        </td>
+            <td class="td5">
+                {{=ed.CurrentTime}}
+            </td>
+            <td class="td6">
+                
+<input type="submit" id ="click" value="Solve" name ="setting_button" 
+onclick = 'alert("Problem has been marked as solved and put under solved category. Go back to see in progress complaints"); window.location="{{=URL('default', 'change_compstatus', args=[ed.id])}}";'>
+
+            </td>
+
+    </tr>
+    {{pass}}
+        
+</table>
+    </div>
+{{else:}}
+    <h4>
+        No Records Found
+       </h4>
+{{pass}}    
+ </div>
